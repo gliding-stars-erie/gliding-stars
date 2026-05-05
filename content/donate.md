@@ -1,14 +1,24 @@
 ---
+# =========================
+# PAGE SETTINGS
+# =========================
+
 title: Donate
 layout: donate.njk
 
+
+# =========================
 # HERO
+# =========================
+
 hero_title: Donate
 hero_image: /assets/images/donate-hero.jpg
+
 
 # =========================
 # WHY DONATE
 # =========================
+# Text and photo shown side-by-side on desktop, stacked on mobile.
 
 why_title: Why Donate?
 why_image: /assets/images/donate-side.jpg
@@ -20,9 +30,12 @@ why_text: |
 
   Every contribution, no matter the size, directly impacts the lives of our skaters and their families. Thank you for supporting all that we do!
 
+
 # =========================
-# DONATION INFO
+# DONATION OPTIONS
 # =========================
+# Text shown inside the donation box. Supports markdown for bold, links, etc.
+# The Venmo button appears automatically below the text.
 
 donate_title: Ways to Donate
 

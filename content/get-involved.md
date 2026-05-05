@@ -1,9 +1,19 @@
 ---
+# =========================
+# PAGE SETTINGS
+# =========================
+
 title: Get Involved
 layout: get-involved.njk
 
+
+# =========================
+# HERO
+# =========================
+
 hero_title: Get Involved
 hero_image: /assets/images/get-involved-hero.jpg
+
 
 # =========================
 # VOLUNTEERS

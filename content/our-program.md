@@ -1,19 +1,45 @@
 ---
+# =========================
+# PAGE SETTINGS
+# =========================
+
 title: Our Program
 layout: our-program.njk
+
+
+# =========================
+# HERO
+# =========================
 
 hero_title: Our Program
 hero_image: /assets/images/program-hero.jpg
 
+
 # =========================
 # IMPORTANT UPDATE
 # =========================
+# Set update_enabled to true to show a blue announcement box at the top of the page.
+# Set it to false to hide it when there is no active announcement.
 
 update_enabled: true
 
 update_title: Important Update
 update_text: |
   The 2025–2026 season begins Monday, September 22. Volunteers should arrive 15 minutes early for orientation on opening night.
+
+
+# =========================
+# SCHEDULE
+# =========================
+# season: The label shown as the schedule heading (e.g. "2025–2026").
+# monday_label: The label for the recurring session day.
+# default_time: The time shown next to the monday_label.
+#
+# schedule: A list of months with their session dates.
+#   Format: MonthName: [day, day, day]
+#
+# extra_sessions: Additional sessions listed below the main schedule grid.
+#   Each entry has a date and a time.
 
 season: 2025–2026
 
@@ -39,6 +65,14 @@ extra_sessions:
   - date: March 21 (SHOW DAY)
     time: 5:30 PM (Stars call time)
 
+
+# =========================
+# SKATING EVENTS
+# =========================
+# Each event has a title, date, time, and a location with a link.
+# Set highlight: true to display the card in the inverted (blue) style —
+# typically used for the Ice Show.
+
 skating_events:
   - title: Skate with the Otters
     date: November 29
@@ -59,17 +93,25 @@ skating_events:
     location_name: Ambassador Conference Center
     location_url: https://ambassadorerie.com
 
+
+# =========================
+# FUNDRAISERS
+# =========================
+# A simple list of fundraiser descriptions shown below the event cards.
+
 fundraisers:
   - Bingo Fundraiser — October 5, Brookside Fire Hall
-  - Stanganelli’s Fundraiser begins October 13 (delivery November 24)
+  - Stanganelli's Fundraiser begins October 13 (delivery November 24)
   - Daffins candy bar sale — TBD
 
 schedule_download: /assets/files/schedule-2025-2026.pdf
 
 
 # =========================
-# GALLERY
+# PHOTO GALLERY
 # =========================
+# Each gallery item has an image path, a caption, and a photo credit.
+# Images appear in a scrollable carousel. Clicking one opens it full-screen.
 
 gallery:
   - image: /assets/images/gallery1.jpg

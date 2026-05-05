@@ -15,6 +15,8 @@ if (toggle && links) {
 // =========================
 // NAV SCROLL BEHAVIOR
 // =========================
+// On the home page, the logo and navbar background fade in as the user scrolls
+// past the hero video. The trigger points differ slightly on mobile vs. desktop.
 const body = document.body;
 const hero = document.querySelector(".hero");
 
@@ -29,17 +31,8 @@ if (hero) {
 
         const bgTrigger = heroHeight - 80;
 
-        if (window.scrollY > logoTrigger) {
-            body.classList.add("scrolled");
-        } else {
-            body.classList.remove("scrolled");
-        }
-
-        if (window.scrollY > bgTrigger) {
-            body.classList.add("nav-solid");
-        } else {
-            body.classList.remove("nav-solid");
-        }
+        body.classList.toggle("scrolled", window.scrollY > logoTrigger);
+        body.classList.toggle("nav-solid", window.scrollY > bgTrigger);
     };
 
     updateNavState();
@@ -51,9 +44,12 @@ if (hero) {
 // =========================
 // REDIRECT MEMORY
 // =========================
+// Stores the current path in sessionStorage so the 404 page can offer
+// a "go back" link if the user lands on a broken URL.
 if (location.pathname !== "/" && !location.pathname.endsWith(".html")) {
     sessionStorage.setItem("redirect", location.pathname);
 }
+
 
 // =========================
 // GALLERY (CAROUSEL + LIGHTBOX)
@@ -62,7 +58,7 @@ const carousels = document.querySelectorAll(".gallery-carousel");
 
 if (carousels.length) {
 
-    // ---- Carousel buttons ----
+    // Carousel scroll buttons
     carousels.forEach(carousel => {
         const track = carousel.querySelector(".gallery-track");
         const next = carousel.querySelector(".next");
@@ -71,22 +67,15 @@ if (carousels.length) {
         if (!track || !next || !prev) return;
 
         next.addEventListener("click", () => {
-            track.scrollBy({
-                left: track.offsetWidth * 0.8,
-                behavior: "smooth"
-            });
+            track.scrollBy({ left: track.offsetWidth * 0.8, behavior: "smooth" });
         });
 
         prev.addEventListener("click", () => {
-            track.scrollBy({
-                left: -track.offsetWidth * 0.8,
-                behavior: "smooth"
-            });
+            track.scrollBy({ left: -track.offsetWidth * 0.8, behavior: "smooth" });
         });
     });
 
-
-    // ---- Lightbox ----
+    // Lightbox: click a gallery image to open it full-screen
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.querySelector(".lightbox-img");
     const lightboxCaption = document.querySelector(".lightbox-caption");
@@ -106,6 +95,7 @@ if (carousels.length) {
             lightbox.classList.remove("active");
         });
 
+        // Clicking the dark backdrop also closes the lightbox
         lightbox.addEventListener("click", (e) => {
             if (e.target === lightbox) {
                 lightbox.classList.remove("active");

@@ -2,6 +2,7 @@
 # =========================
 # PAGE SETTINGS
 # =========================
+# Required — do not change these two lines.
 
 title: Get Involved
 layout: get-involved.njk
@@ -10,6 +11,7 @@ layout: get-involved.njk
 # =========================
 # HERO
 # =========================
+# The large banner image at the top of the page.
 
 hero_title: Get Involved
 hero_image: /assets/images/get-involved-hero.jpg
@@ -18,6 +20,8 @@ hero_image: /assets/images/get-involved-hero.jpg
 # =========================
 # VOLUNTEERS
 # =========================
+# The left column on desktop. volunteer_subtitle is a smaller heading
+# that appears below the main volunteer_title.
 
 volunteer_title: Volunteer With Us
 volunteer_subtitle: Why Volunteer?
@@ -39,6 +43,7 @@ volunteer_form: /assets/forms/Volunteer-Registration-Form.pdf
 # =========================
 # SKATERS
 # =========================
+# The right column on desktop, displayed inside a highlighted box.
 
 skater_title: Skater Program
 

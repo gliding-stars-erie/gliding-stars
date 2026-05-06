@@ -10,6 +10,18 @@
 </section>
 
 <section class="section">
+  <p class="video-prompt">Watch below for a quick overview of the Gliding Stars of Erie and to see them in action!</p>
+  <div class="video-embed">
+    <iframe
+      src="https://www.youtube.com/embed/OpAsLys1zsk?si=ZnZvEhOBLxQdrN2-&modestbranding=1"
+      title="Gliding Stars of Erie"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
+
+<section class="section">
   <h2>{{ history_title }}</h2>
 
   <div class="history-layout">
@@ -42,6 +54,22 @@
         <li>{{ item | markdown | safe }}</li>
       {% endfor %}
     </ul>
+  </div>
+</section>
+
+<section class="section">
+  <h2>{{ team_title }}</h2>
+  <div class="team-grid">
+    {% for group in team %}
+      <div class="team-group">
+        <h3>{{ group.group }}</h3>
+        <ul>
+          {% for member in group.members %}
+            <li>{{ member }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
   </div>
 </section>
 

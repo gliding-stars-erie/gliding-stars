@@ -20,82 +20,93 @@
 </section>
 {% endif %}
 
+<!-- SKATING EVENTS -->
+<section class="section">
+  <h2>{{ events_title }}</h2>
+
+  <div class="event-grid">
+    {% for e in skating_events %}
+      <div class="event-card {% if e.highlight %}event-card-featured{% endif %}">
+
+        <div class="event-title">{{ e.title }}</div>
+
+        <div class="event-line">
+          <strong>Date:</strong> {{ e.date }}
+        </div>
+
+        <div class="event-line">
+          <strong>Time:</strong> {{ e.time }}
+        </div>
+
+        <div class="event-line">
+          <strong>Location:</strong>
+          <a href="{{ e.location_url }}" target="_blank">{{ e.location_name }}</a>
+        </div>
+
+      </div>
+    {% endfor %}
+  </div>
+
+  <!-- FUNDRAISERS -->
+  <div class="schedule-extras">
+    <h3>{{ fundraisers_title }}</h3>
+    <div class="schedule-card">
+      <ul class="extra-sessions-list">
+        {% for f in fundraisers %}
+          <li>
+            <span class="extra-session-date">{{ f.title }}</span>
+            <span class="extra-session-time">{{ f.date }}</span>
+            {% if f.details %}
+              <span class="extra-session-details">{{ f.details }}</span>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
 <!-- SCHEDULE -->
 <section class="section">
-  <h2>{{ season }} Schedule</h2>
+  <h2>{{ schedule_title }}</h2>
 
-  <p class="schedule-time featured-time">
-    {{ monday_label }}: {{ default_time }}
+  <p class="featured-time">
+    {{ monday_label }}: <span class="highlight">{{ monday_time }}</span>
   </p>
 
   <div class="schedule-grid">
 
-    <!-- MONTHLY MONDAY SESSIONS -->
     {% for month, dates in schedule %}
+      {% if month in ["September", "October", "November", "December"] %}
+        {% set yr = year_start %}
+      {% else %}
+        {% set yr = year_end %}
+      {% endif %}
       <div class="schedule-card">
         <h3>{{ month }}</h3>
-        <p>
+        <ul>
           {% for d in dates %}
-            {{ month }} {{ d }}{% if not loop.last %}, {% endif %}
+            <li>{{ month }} {{ d }}, {{ yr }}</li>
           {% endfor %}
-        </p>
+        </ul>
       </div>
     {% endfor %}
 
   </div>
 
   <!-- ADDITIONAL SESSIONS -->
-    <div class="schedule-extras">
-      <h3>Additional Sessions (Show Preparation)</h3>
-
-      <div class="schedule-card schedule-card-accent">
-        <h3>March</h3>
-        <ul>
-          {% for item in extra_sessions %}
-            <li>{{ item.date }} — {{ item.time }}</li>
-          {% endfor %}
-        </ul>
-      </div>
+  <div class="schedule-extras">
+    <h3>{{ extra_sessions_title }}</h3>
+    <div class="schedule-card">
+      <ul class="extra-sessions-list">
+        {% for item in extra_sessions %}
+          <li>
+            <span class="extra-session-date">{{ item.date }}</span>
+            <span class="extra-session-time">{{ item.time }}</span>
+          </li>
+        {% endfor %}
+      </ul>
     </div>
-
-  <!-- SKATING EVENTS -->
-  <div class="schedule-events">
-    <h3>Skating Events</h3>
-
-    <div class="event-grid">
-      {% for e in skating_events %}
-        <div class="event-card {% if e.highlight %}event-card-featured{% endif %}">
-
-          <div class="event-title">{{ e.title }}</div>
-
-          <div class="event-line">
-            <strong>Date:</strong> {{ e.date }}
-          </div>
-
-          <div class="event-line">
-            <strong>Time:</strong> {{ e.time }}
-          </div>
-
-          <div class="event-line">
-            <strong>Location:</strong>
-            <a href="{{ e.location_url }}" target="_blank">
-              {{ e.location_name }}
-            </a>
-          </div>
-
-        </div>
-      {% endfor %}
-    </div>
-  </div>
-
-  <!-- FUNDRAISERS -->
-  <div class="schedule-events">
-    <h3>Fundraisers</h3>
-    <ul>
-      {% for f in fundraisers %}
-        <li>{{ f }}</li>
-      {% endfor %}
-    </ul>
   </div>
 
   <a href="{{ schedule_download | url }}" class="button" target="_blank">
@@ -103,33 +114,36 @@
   </a>
 </section>
 
-<!-- GALLERY -->
+<!-- GALLERIES -->
 <section class="section">
-  <h2>Photo Gallery</h2>
+  <h2>{{ gallery_title }}</h2>
 
-  <div class="gallery-carousel">
+  {% for gallery in galleries %}
+    <h3 class="gallery-group-title">{{ gallery.title }}</h3>
 
-    <button class="gallery-btn prev" aria-label="Previous">&#10094;</button>
+    <div class="gallery-carousel gallery-{{ gallery.type or 'mixed' }}">
 
-    <div class="gallery-track">
-      {% for photo in gallery %}
-        <figure class="gallery-item">
-          <img
-            src="{{ photo.image | url }}"
-            alt="{{ photo.caption }}"
-            data-full="{{ photo.image | url }}"
-          >
-          <figcaption>
-            <strong>{{ photo.caption }}</strong><br>
-            <span>{{ photo.credit }}</span>
-          </figcaption>
-        </figure>
-      {% endfor %}
+      <button class="gallery-btn prev" aria-label="Previous">&#10094;</button>
+
+      <div class="gallery-track">
+        {% for photo in gallery.photos %}
+          <figure class="gallery-item">
+            <img
+              src="{{ photo.image | url }}"
+              alt="{{ photo.alt_text }}"
+              data-full="{{ photo.image | url }}"
+              data-credit="{{ photo.credit }}"
+            >
+            <figcaption>{{ photo.credit }}</figcaption>
+          </figure>
+        {% endfor %}
+      </div>
+
+      <button class="gallery-btn next" aria-label="Next">&#10095;</button>
+
     </div>
+  {% endfor %}
 
-    <button class="gallery-btn next" aria-label="Next">&#10095;</button>
-
-  </div>
 </section>
 
 <!-- LIGHTBOX -->

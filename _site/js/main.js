@@ -15,6 +15,8 @@ if (toggle && links) {
 // =========================
 // NAV SCROLL BEHAVIOR
 // =========================
+// On the home page, the logo and navbar background fade in as the user scrolls
+// past the hero video. The trigger points differ slightly on mobile vs. desktop.
 const body = document.body;
 const hero = document.querySelector(".hero");
 
@@ -29,17 +31,8 @@ if (hero) {
 
         const bgTrigger = heroHeight - 80;
 
-        if (window.scrollY > logoTrigger) {
-            body.classList.add("scrolled");
-        } else {
-            body.classList.remove("scrolled");
-        }
-
-        if (window.scrollY > bgTrigger) {
-            body.classList.add("nav-solid");
-        } else {
-            body.classList.remove("nav-solid");
-        }
+        body.classList.toggle("scrolled", window.scrollY > logoTrigger);
+        body.classList.toggle("nav-solid", window.scrollY > bgTrigger);
     };
 
     updateNavState();
@@ -51,9 +44,12 @@ if (hero) {
 // =========================
 // REDIRECT MEMORY
 // =========================
+// Stores the current path in sessionStorage so the 404 page can offer
+// a "go back" link if the user lands on a broken URL.
 if (location.pathname !== "/" && !location.pathname.endsWith(".html")) {
     sessionStorage.setItem("redirect", location.pathname);
 }
+
 
 // =========================
 // GALLERY (CAROUSEL + LIGHTBOX)
@@ -62,31 +58,54 @@ const carousels = document.querySelectorAll(".gallery-carousel");
 
 if (carousels.length) {
 
-    // ---- Carousel buttons ----
+    // Carousel scroll buttons
     carousels.forEach(carousel => {
         const track = carousel.querySelector(".gallery-track");
-        const next = carousel.querySelector(".next");
-        const prev = carousel.querySelector(".prev");
+        const nextBtn = carousel.querySelector(".next");
+        const prevBtn = carousel.querySelector(".prev");
 
-        if (!track || !next || !prev) return;
+        if (!track || !nextBtn || !prevBtn) return;
 
-        next.addEventListener("click", () => {
-            track.scrollBy({
-                left: track.offsetWidth * 0.8,
-                behavior: "smooth"
+        const items = Array.from(track.querySelectorAll(".gallery-item"));
+        if (!items.length) return;
+
+        let currentIndex = 0;
+
+        const updateArrows = () => {
+            prevBtn.style.visibility = currentIndex === 0 ? "hidden" : "visible";
+            nextBtn.style.visibility = currentIndex === items.length - 1 ? "hidden" : "visible";
+        };
+
+        // Scroll the track to a specific item. Uses getBoundingClientRect so
+        // the target position is always exact — no accumulated rounding drift.
+        const goTo = (index) => {
+            currentIndex = Math.max(0, Math.min(index, items.length - 1));
+            const itemLeft = items[currentIndex].getBoundingClientRect().left;
+            const trackLeft = track.getBoundingClientRect().left;
+            track.scrollTo({ left: track.scrollLeft + (itemLeft - trackLeft), behavior: "smooth" });
+            updateArrows();
+        };
+
+        // Keep index in sync after user swipes manually.
+        track.addEventListener("scrollend", () => {
+            const trackLeft = track.getBoundingClientRect().left;
+            let nearest = 0;
+            let minDist = Infinity;
+            items.forEach((item, i) => {
+                const dist = Math.abs(item.getBoundingClientRect().left - trackLeft);
+                if (dist < minDist) { minDist = dist; nearest = i; }
             });
+            currentIndex = nearest;
+            updateArrows();
         });
 
-        prev.addEventListener("click", () => {
-            track.scrollBy({
-                left: -track.offsetWidth * 0.8,
-                behavior: "smooth"
-            });
-        });
+        nextBtn.addEventListener("click", () => goTo(currentIndex + 1));
+        prevBtn.addEventListener("click", () => goTo(currentIndex - 1));
+
+        updateArrows();
     });
 
-
-    // ---- Lightbox ----
+    // Lightbox: click a gallery image to open it full-screen
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.querySelector(".lightbox-img");
     const lightboxCaption = document.querySelector(".lightbox-caption");
@@ -98,7 +117,8 @@ if (carousels.length) {
             img.addEventListener("click", () => {
                 lightbox.classList.add("active");
                 lightboxImg.src = img.dataset.full;
-                lightboxCaption.innerHTML = img.alt;
+                lightboxImg.alt = img.alt;
+                lightboxCaption.innerHTML = img.dataset.credit || "";
             });
         });
 
@@ -106,6 +126,7 @@ if (carousels.length) {
             lightbox.classList.remove("active");
         });
 
+        // Clicking the dark backdrop also closes the lightbox
         lightbox.addEventListener("click", (e) => {
             if (e.target === lightbox) {
                 lightbox.classList.remove("active");

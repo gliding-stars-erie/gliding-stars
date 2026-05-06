@@ -2,6 +2,7 @@
 # =========================
 # PAGE SETTINGS
 # =========================
+# Required — do not change these two lines.
 
 title: Donate
 layout: donate.njk
@@ -10,6 +11,7 @@ layout: donate.njk
 # =========================
 # HERO
 # =========================
+# The large banner image at the top of the page.
 
 hero_title: Donate
 hero_image: /assets/images/donate-hero.jpg
@@ -32,10 +34,10 @@ why_text: |
 
 
 # =========================
-# DONATION OPTIONS
+# WAYS TO DONATE
 # =========================
 # Text shown inside the donation box. Supports markdown for bold, links, etc.
-# The Venmo button appears automatically below the text.
+# The Venmo button appears automatically below the text using venmo_link and venmo_text.
 
 donate_title: Ways to Donate
 

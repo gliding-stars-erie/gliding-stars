@@ -35,6 +35,27 @@
   {% endfor %}
 </section>
 
+<!-- OPTIONAL FEATURE -->
+{% if feature_enabled %}
+<section class="feature-band">
+  <div class="feature-inner">
+    <h2>{{ feature.title }}</h2>
+    <div class="feature-body">
+      {% if feature.image %}
+        <img src="{{ feature.image | url }}" alt="{{ feature.title }}" class="feature-image">
+      {% endif %}
+      {{ feature.body | markdown | safe }}
+    </div>
+    <div class="feature-cta">
+      {{ feature.cta | markdown | safe }}
+      {% if feature.button %}
+        <a href="{{ feature.button_url | url }}" class="button feature-button">{{ feature.button }}</a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
 <!-- SHOW PREVIEW -->
 <section class="section show-preview">
   <h2>{{ show.title }}</h2>
@@ -48,13 +69,5 @@
     </iframe>
   </div>
 </section>
-
-<!-- OPTIONAL FEATURE -->
-{% if feature_enabled %}
-<section class="section feature">
-  <h2>{{ feature.title }}</h2>
-  <p>{{ feature.text }}</p>
-</section>
-{% endif %}
 
 {% endblock %}

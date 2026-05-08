@@ -1,0 +1,38 @@
+{% extends "./base.njk" %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="page-hero">
+  <img src="{{ hero_image | url }}" alt="Internship Blog">
+  <div class="page-hero-overlay">
+    <h1>{{ hero_title }}</h1>
+  </div>
+</section>
+
+<!-- POST LIST -->
+<section class="section">
+
+  {% if intro %}
+    <p class="blog-intro">{{ intro }}</p>
+  {% endif %}
+
+  {% set posts = collections.blogs %}
+  {% if posts and posts.length %}
+    <ul class="blog-list">
+      {% for post in posts %}
+        <li class="blog-list-item">
+          <p class="blog-list-date">{{ post.date | formatDate }}</p>
+          <p class="blog-list-title">
+            <a href="{{ post.url | url }}">{{ post.data.title }}</a>
+          </p>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No posts yet — check back soon!</p>
+  {% endif %}
+
+</section>
+
+{% endblock %}

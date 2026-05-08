@@ -17,6 +17,22 @@ module.exports = function(eleventyConfig) {
         return md.render(content || "");
     });
 
+    // Blog collection — all files tagged "blogs", sorted newest first
+    eleventyConfig.addCollection("blogs", function(collectionApi) {
+        return collectionApi.getFilteredByTag("blogs")
+            .sort((a, b) => b.date - a.date);
+    });
+
+    // Date formatting filter for blog posts
+    eleventyConfig.addFilter("formatDate", function(date) {
+        return new Date(date).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+            timeZone: "UTC"
+        });
+    });
+
     eleventyConfig.addPassthroughCopy("css");
     eleventyConfig.addPassthroughCopy("assets");
     eleventyConfig.addPassthroughCopy("js");

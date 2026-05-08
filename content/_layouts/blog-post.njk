@@ -15,6 +15,30 @@
     {{ content | safe }}
   </div>
 
+  {% set neighbors = collections.blogs | blogNeighbors(page.url) %}
+  {% if neighbors.prev or neighbors.next %}
+    <nav class="blog-post-nav">
+      <div class="blog-post-nav-prev">
+        {% if neighbors.prev %}
+          <a href="{{ neighbors.prev.url | url }}" class="blog-nav-btn">
+            <span class="blog-nav-arrow">&larr;</span>
+            <span class="blog-nav-label">Previous</span>
+            <span class="blog-nav-title">{{ neighbors.prev.data.title }}</span>
+          </a>
+        {% endif %}
+      </div>
+      <div class="blog-post-nav-next">
+        {% if neighbors.next %}
+          <a href="{{ neighbors.next.url | url }}" class="blog-nav-btn blog-nav-btn-right">
+            <span class="blog-nav-label">Next</span>
+            <span class="blog-nav-title">{{ neighbors.next.data.title }}</span>
+            <span class="blog-nav-arrow">&rarr;</span>
+          </a>
+        {% endif %}
+      </div>
+    </nav>
+  {% endif %}
+
 </article>
 
 {% endblock %}

@@ -1727,3 +1727,59 @@ p a:active,
     color: #555;
     font-style: italic;
 }
+
+.blog-post-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #e5e5e5;
+}
+
+.blog-post-nav-prev,
+.blog-post-nav-next {
+    flex: 1;
+}
+
+.blog-post-nav-next {
+    text-align: right;
+}
+
+.blog-nav-btn {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    text-decoration: none;
+    color: inherit;
+    max-width: 280px;
+}
+
+.blog-nav-btn-right {
+    align-items: flex-end;
+}
+
+.blog-nav-arrow {
+    font-size: 1.2rem;
+    color: var(--color-brand);
+}
+
+.blog-nav-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #999;
+}
+
+.blog-nav-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-brand);
+    line-height: 1.3;
+}
+
+@media (hover: hover) {
+    .blog-nav-btn:hover .blog-nav-title {
+        text-decoration: underline;
+    }
+}

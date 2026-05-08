@@ -23,6 +23,16 @@ module.exports = function(eleventyConfig) {
             .sort((a, b) => b.date - a.date);
     });
 
+    // Returns { prev, next } neighbors for a post in the blogs collection.
+    // Collection is newest-first, so prev = older (higher index), next = newer (lower index).
+    eleventyConfig.addFilter("blogNeighbors", function(collection, currentUrl) {
+        const index = collection.findIndex(post => post.url === currentUrl);
+        return {
+            prev: index < collection.length - 1 ? collection[index + 1] : null,
+            next: index > 0 ? collection[index - 1] : null
+        };
+    });
+
     // Date formatting filter for blog posts
     eleventyConfig.addFilter("formatDate", function(date) {
         return new Date(date).toLocaleDateString("en-US", {

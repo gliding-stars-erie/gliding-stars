@@ -20,14 +20,15 @@
 
   <meta property="og:title" content="{% if page.url == '/' %}Gliding Stars of Erie{% else %}{{ title }} | Gliding Stars of Erie{% endif %}">
   <meta property="og:description" content="Adaptive ice skating program in Erie, PA.">
-  <meta property="og:image" content="{{ '/assets/images/logo.png' | url }}">
+  {% set ogImage = og_image if og_image else '/assets/images/og-default.jpg' %}
+  <meta property="og:image" content="{{ ogImage | url }}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ page.url | url }}">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{% if page.url == '/' %}Gliding Stars of Erie{% else %}{{ title }} | Gliding Stars of Erie{% endif %}">
   <meta name="twitter:description" content="Adaptive ice skating program in Erie, PA.">
-  <meta name="twitter:image" content="{{ '/assets/images/logo.png' | url }}">
+  <meta name="twitter:image" content="{{ ogImage | url }}">
 </head>
 
 <body class="{% if page.url == '/' %}home{% endif %}">

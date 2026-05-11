@@ -6,6 +6,7 @@
 
 title: Home
 layout: home.njk
+description: "Gliding Stars of Erie is an adaptive ice skating program in Erie, PA, helping individuals with disabilities build confidence, independence, and community through skating since 1999."
 
 
 # =========================

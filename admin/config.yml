@@ -1,0 +1,357 @@
+# =============================================================
+# DECAP CMS CONFIGURATION — Gliding Stars of Erie
+# =============================================================
+# This file defines what editors see in the /admin panel.
+# Changes here affect the CMS interface only — not the site design.
+
+backend:
+  name: git-gateway
+  branch: main
+
+# Where uploaded images are saved and how they appear in content
+media_folder: assets/images/uploads
+public_folder: /assets/images/uploads
+
+site_url: https://glidingstarsoferie.org
+display_url: https://glidingstarsoferie.org
+logo_url: https://glidingstarsoferie.org/assets/images/logo.png
+
+
+collections:
+
+  # =============================================================
+  # PAGES
+  # =============================================================
+
+  - label: "Pages"
+    name: pages
+    files:
+
+      # ----------------------------------------------------------
+      # HOME PAGE
+      # ----------------------------------------------------------
+      - label: "Home Page"
+        name: home
+        file: "content/index.md"
+        fields:
+          - {label: "Page Title", name: title, widget: hidden, default: "Home"}
+          - {label: "Layout", name: layout, widget: hidden, default: "home.njk"}
+          - label: "SEO Description"
+            name: description
+            widget: string
+            hint: "Shown in Google search results. Keep between 150–160 characters."
+
+          - label: "Hero Section"
+            name: hero
+            widget: object
+            collapsed: true
+            fields:
+              - {label: "Motto (large text on video)", name: hero_motto, widget: string}
+              - {label: "Tagline (smaller text below motto)", name: hero_sub, widget: string}
+
+          - label: "Mission Statement"
+            name: mission
+            widget: text
+            hint: "One or two sentences shown just below the hero video."
+
+          - label: "Quick Link Cards"
+            name: quick_links
+            widget: list
+            hint: "The three cards shown below the mission statement."
+            fields:
+              - {label: "Card Title", name: title, widget: string}
+              - {label: "Description", name: text, widget: text}
+              - {label: "Page Link (URL)", name: url, widget: string}
+              - {label: "Button Label", name: button, widget: string}
+              - {label: "Card Image", name: image, widget: image}
+
+          - label: "Show Feature Banner?"
+            name: feature_enabled
+            widget: boolean
+            default: false
+            hint: "Turn on to show the special highlighted section (e.g. Emma & Dan's Journey)."
+
+          - label: "Feature Banner"
+            name: feature
+            widget: object
+            collapsed: true
+            hint: "Only shown when 'Show Feature Banner?' is turned on."
+            fields:
+              - {label: "Title", name: title, widget: string}
+              - {label: "Body Text", name: body, widget: markdown}
+              - {label: "Call to Action Text", name: cta, widget: markdown}
+              - {label: "Button Label", name: button, widget: string, required: false}
+              - {label: "Button URL", name: button_url, widget: string, required: false}
+              - {label: "Image", name: image, widget: image, required: false}
+
+          - label: "Ice Show Section"
+            name: show
+            widget: object
+            collapsed: true
+            fields:
+              - {label: "Section Title", name: title, widget: string}
+              - {label: "Text", name: text, widget: markdown}
+
+
+      # ----------------------------------------------------------
+      # ABOUT US PAGE
+      # ----------------------------------------------------------
+      - label: "About Us Page"
+        name: about
+        file: "content/about-us.md"
+        fields:
+          - {label: "Page Title", name: title, widget: hidden, default: "About Us"}
+          - {label: "Layout", name: layout, widget: hidden, default: "about.njk"}
+          - label: "SEO Description"
+            name: description
+            widget: string
+            hint: "Shown in Google search results. Keep between 150–160 characters."
+          - {label: "Hero Title", name: hero_title, widget: string}
+          - {label: "Hero Image", name: hero_image, widget: image}
+
+          - {label: "History Section Title", name: history_title, widget: string}
+          - {label: "History Photo", name: history_image, widget: image, hint: "Photo of Jack Schultz and Linda Althof"}
+          - label: "History Text"
+            name: history
+            widget: markdown
+            hint: "Lines starting with > become styled blockquotes (used for Jack's quote)."
+
+          - {label: "How We Help — Title", name: how_title, widget: string}
+          - {label: "How We Help — Text", name: how_text, widget: markdown}
+
+          - {label: "What We Do — Title", name: what_title, widget: string}
+          - label: "What We Do — List Items"
+            name: what_list
+            widget: list
+            field: {label: "Item", name: item, widget: string}
+
+          - {label: "Our Team — Title", name: team_title, widget: string}
+          - label: "Our Team — Groups"
+            name: team
+            widget: list
+            hint: "Each group is a box (e.g. Leadership, Coaches). Add or remove groups here."
+            fields:
+              - {label: "Group Name", name: group, widget: string}
+              - label: "Members"
+                name: members
+                widget: list
+                field: {label: "Name (and role if applicable)", name: member, widget: string}
+
+
+      # ----------------------------------------------------------
+      # OUR PROGRAM PAGE
+      # ----------------------------------------------------------
+      - label: "Our Program Page"
+        name: program
+        file: "content/our-program.md"
+        fields:
+          - {label: "Page Title", name: title, widget: hidden, default: "Our Program"}
+          - {label: "Layout", name: layout, widget: hidden, default: "our-program.njk"}
+          - label: "SEO Description"
+            name: description
+            widget: string
+            hint: "Shown in Google search results. Keep between 150–160 characters."
+          - {label: "Hero Title", name: hero_title, widget: string}
+          - {label: "Hero Image", name: hero_image, widget: image}
+
+          - label: "Show Announcement Box?"
+            name: update_enabled
+            widget: boolean
+            hint: "Turn on when there is an active announcement (e.g. schedule update). Turn off when there isn't."
+          - {label: "Announcement Title", name: update_title, widget: string}
+          - label: "Announcement Text"
+            name: update_text
+            widget: text
+            hint: "Supports **bold** and [links](url)."
+
+          - {label: "Events Section Title", name: events_title, widget: string}
+          - label: "Upcoming Events"
+            name: skating_events
+            widget: list
+            hint: "Each event appears as a card. The Ice Show card should have 'Highlight this card?' turned on."
+            fields:
+              - {label: "Event Name", name: title, widget: string}
+              - {label: "Date", name: date, widget: string, hint: "e.g. March 21, 2026"}
+              - {label: "Time", name: time, widget: string, hint: "e.g. 7:00 p.m."}
+              - {label: "Location Name", name: location_name, widget: string}
+              - {label: "Location Website URL", name: location_url, widget: string}
+              - label: "Highlight this card? (use for the Ice Show)"
+                name: highlight
+                widget: boolean
+                default: false
+                required: false
+
+          - {label: "Fundraisers Section Title", name: fundraisers_title, widget: string}
+          - label: "Fundraisers"
+            name: fundraisers
+            widget: list
+            fields:
+              - {label: "Fundraiser Name", name: title, widget: string}
+              - {label: "Date or Date Range", name: date, widget: string, hint: "e.g. October 5, 2026 or October 13 – November 24, 2026"}
+              - {label: "Details (location, delivery date, notes)", name: details, widget: string, required: false}
+
+          - {label: "Schedule Section Title", name: schedule_title, widget: string}
+          - {label: "Monday Session Label", name: monday_label, widget: string}
+          - {label: "Monday Session Time", name: monday_time, widget: string, hint: "e.g. 6:00–7:30 p.m."}
+          - {label: "Season Start Year", name: year_start, widget: number, hint: "e.g. 2026"}
+          - {label: "Season End Year", name: year_end, widget: number, hint: "e.g. 2027"}
+
+          - label: "Practice Schedule"
+            name: schedule
+            widget: object
+            collapsed: true
+            hint: "Enter the session day numbers for each month. Remove a month's days if there are no sessions that month."
+            fields:
+              - label: "September"
+                name: September
+                widget: list
+                required: false
+                field: {label: "Day", name: day, widget: number}
+              - label: "October"
+                name: October
+                widget: list
+                required: false
+                field: {label: "Day", name: day, widget: number}
+              - label: "November"
+                name: November
+                widget: list
+                required: false
+                field: {label: "Day", name: day, widget: number}
+              - label: "December"
+                name: December
+                widget: list
+                required: false
+                field: {label: "Day", name: day, widget: number}
+              - label: "January"
+                name: January
+                widget: list
+                required: false
+                field: {label: "Day", name: day, widget: number}
+              - label: "February"
+                name: February
+                widget: list
+                required: false
+                field: {label: "Day", name: day, widget: number}
+              - label: "March"
+                name: March
+                widget: list
+                required: false
+                field: {label: "Day", name: day, widget: number}
+
+          - {label: "Additional Sessions Title", name: extra_sessions_title, widget: string}
+          - label: "Additional Sessions (Show Preparation)"
+            name: extra_sessions
+            widget: list
+            fields:
+              - {label: "Date", name: date, widget: string, hint: "e.g. Monday, March 16, 2026 (SHOW DAY)"}
+              - {label: "Time", name: time, widget: string, hint: "e.g. 5:30–8:30 p.m."}
+
+          - label: "Schedule PDF Download"
+            name: schedule_download
+            widget: file
+            required: false
+            hint: "Upload the full season schedule PDF."
+
+          - {label: "Gallery Section Title", name: gallery_title, widget: string}
+          - label: "Photo Galleries"
+            name: galleries
+            widget: list
+            hint: "Each gallery appears as a scrollable carousel. Add a new gallery for each event or season."
+            fields:
+              - {label: "Gallery Title (e.g. Banquet 2026)", name: title, widget: string}
+              - label: "Photo Layout Type"
+                name: type
+                widget: select
+                hint: "Choose based on the majority of your photos."
+                options:
+                  - {label: "Horizontal — mostly landscape photos", value: horizontal}
+                  - {label: "Vertical — mostly portrait photos", value: vertical}
+                  - {label: "Mixed — combination of both", value: mixed}
+              - label: "Photos"
+                name: photos
+                widget: list
+                fields:
+                  - {label: "Photo", name: image, widget: image}
+                  - {label: "Photo Credit", name: credit, widget: string, hint: "e.g. Photo by Linda Althof"}
+                  - label: "Alt Text"
+                    name: alt_text
+                    widget: string
+                    hint: "Describe what is in the photo (for accessibility and search engines). Be specific — who is in it, what are they doing?"
+
+
+      # ----------------------------------------------------------
+      # GET INVOLVED PAGE
+      # ----------------------------------------------------------
+      - label: "Get Involved Page"
+        name: get_involved
+        file: "content/get-involved.md"
+        fields:
+          - {label: "Page Title", name: title, widget: hidden, default: "Get Involved"}
+          - {label: "Layout", name: layout, widget: hidden, default: "get-involved.njk"}
+          - label: "SEO Description"
+            name: description
+            widget: string
+            hint: "Shown in Google search results. Keep between 150–160 characters."
+          - {label: "Hero Title", name: hero_title, widget: string}
+          - {label: "Hero Image", name: hero_image, widget: image}
+
+          - {label: "Volunteer Section Title", name: volunteer_title, widget: string}
+          - {label: "Volunteer Subheading", name: volunteer_subtitle, widget: string}
+          - {label: "Volunteer Text", name: volunteer_text, widget: markdown}
+          - {label: "Volunteer Registration Form (PDF)", name: volunteer_form, widget: file}
+
+          - {label: "Skater Section Title", name: skater_title, widget: string}
+          - {label: "Skater Text", name: skater_text, widget: markdown}
+          - {label: "Skater Registration Form (PDF)", name: skater_form, widget: file}
+
+
+      # ----------------------------------------------------------
+      # DONATE PAGE
+      # ----------------------------------------------------------
+      - label: "Donate Page"
+        name: donate
+        file: "content/donate.md"
+        fields:
+          - {label: "Page Title", name: title, widget: hidden, default: "Donate"}
+          - {label: "Layout", name: layout, widget: hidden, default: "donate.njk"}
+          - label: "SEO Description"
+            name: description
+            widget: string
+            hint: "Shown in Google search results. Keep between 150–160 characters."
+          - {label: "Hero Title", name: hero_title, widget: string}
+          - {label: "Hero Image", name: hero_image, widget: image}
+
+          - {label: "Why Donate — Title", name: why_title, widget: string}
+          - {label: "Why Donate — Photo", name: why_image, widget: image}
+          - {label: "Why Donate — Text", name: why_text, widget: markdown}
+
+          - {label: "Donation Box Title", name: donate_title, widget: string}
+          - {label: "Donation Box Text", name: donate_text, widget: markdown}
+          - {label: "Venmo Link URL", name: venmo_link, widget: string}
+          - {label: "Venmo Button Label", name: venmo_text, widget: string}
+
+
+  # =============================================================
+  # BLOG POSTS
+  # =============================================================
+
+  - label: "Internship Blog Posts"
+    name: blogs
+    folder: "content/blogs"
+    create: true
+    delete: false
+    filter: {field: "post_type", value: "post"}
+    slug: "{{year}}-{{month}}-{{day}}"
+    summary: "{{title}} — {{date}}"
+    fields:
+      - {label: "Title", name: title, widget: string}
+      - label: "Date"
+        name: date
+        widget: datetime
+        format: "YYYY-MM-DD"
+        date_format: "MMMM D, YYYY"
+        time_format: false
+      - label: "Content"
+        name: body
+        widget: markdown
+        hint: "Write the full post here. Use ## for section headings, **bold**, and [link text](url) for links."

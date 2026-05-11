@@ -6,6 +6,7 @@
 
 title: Donate
 layout: donate.njk
+description: "Support Gliding Stars of Erie with a donation. Your contribution funds ice time, adaptive equipment, and program operations for individuals with disabilities in Erie, PA."
 
 
 # =========================

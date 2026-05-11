@@ -7,6 +7,7 @@
 title: Internship Blog
 layout: blog-index.njk
 eleventyExcludeFromCollections: true
+description: "Weekly blog documenting a Penn State Behrend student's internship with Gliding Stars of Erie, covering website redesign, event production, social media, and community outreach."
 
 
 # =========================

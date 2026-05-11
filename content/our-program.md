@@ -6,6 +6,7 @@
 
 title: Our Program
 layout: our-program.njk
+description: "Find the Gliding Stars of Erie practice schedule, upcoming events including the annual ice show, current season fundraisers, and photo galleries from our Stars in Erie, PA."
 
 
 # =========================

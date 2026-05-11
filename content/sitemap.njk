@@ -1,0 +1,16 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for item in collections.all %}
+    {% if "/404" not in item.url %}
+  <url>
+    <loc>{{ siteUrl }}{{ item.url | url }}</loc>
+    <lastmod>{{ item.date | isoDate }}</lastmod>
+    <changefreq>{% if item.url == "/" %}weekly{% else %}monthly{% endif %}</changefreq>
+  </url>
+    {% endif %}
+  {% endfor %}
+</urlset>

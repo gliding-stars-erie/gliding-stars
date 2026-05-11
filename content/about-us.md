@@ -6,6 +6,7 @@
 
 title: About Us
 layout: about.njk
+description: "Learn about Gliding Stars of Erie — our 26-year history founded by Jack Schultz, how our adaptive skating program works, and the dedicated coaches and volunteers who make it possible."
 
 
 # =========================

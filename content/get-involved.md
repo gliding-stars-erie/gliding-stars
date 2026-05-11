@@ -6,6 +6,7 @@
 
 title: Get Involved
 layout: get-involved.njk
+description: "Volunteer or register as a skater with Gliding Stars of Erie. Discover what to expect, how to sign up, and how your involvement changes lives for individuals with disabilities in Erie, PA."
 
 
 # =========================

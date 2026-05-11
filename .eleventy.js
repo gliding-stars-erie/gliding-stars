@@ -43,12 +43,20 @@ module.exports = function(eleventyConfig) {
         });
     });
 
+    // ISO date filter for sitemap and structured data (YYYY-MM-DD)
+    eleventyConfig.addFilter("isoDate", function(date) {
+        return new Date(date).toISOString().slice(0, 10);
+    });
+
     eleventyConfig.addPassthroughCopy("css");
     eleventyConfig.addPassthroughCopy("assets");
     eleventyConfig.addPassthroughCopy("js");
+    eleventyConfig.addPassthroughCopy("admin");
 
-    // ✅ ADD THIS
     eleventyConfig.addGlobalData("build", Date.now());
+
+    // Base URL used for absolute links in meta tags, sitemap, and structured data
+    eleventyConfig.addGlobalData("siteUrl", "https://mrs7068.github.io");
 
     return {
         pathPrefix: "/gliding-stars/",

@@ -56,10 +56,10 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addGlobalData("build", Date.now());
 
     // Base URL used for absolute links in meta tags, sitemap, and structured data
-    eleventyConfig.addGlobalData("siteUrl", "https://mrs7068.github.io");
+    eleventyConfig.addGlobalData("siteUrl", "https://glidingstarsoferie.org");
 
     return {
-        pathPrefix: "/gliding-stars/",
+        pathPrefix: "/",
         dir: {
             input: "content",
             includes: "_includes",

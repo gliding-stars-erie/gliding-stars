@@ -91,10 +91,10 @@ collections:
             collapsed: true
             fields:
               - {label: "Section Title", name: title, widget: string}
-              - label: "YouTube Video"
+              - label: "YouTube Video URL"
                 name: video
-                widget: youtube-embed
-                hint: "Go to YouTube → Share → Embed, then paste the entire embed code here (or just the URL). Example URL format: https://www.youtube.com/embed/VIDEO_ID"
+                widget: string
+                hint: "On YouTube: click Share → Embed. From the code that appears, copy only the URL inside src=\"...\" — it starts with https://www.youtube.com/embed/ — and paste just that URL here."
               - {label: "Text", name: text, widget: markdown}
 
 
@@ -113,10 +113,10 @@ collections:
             hint: "Shown in Google search results. Keep between 150–160 characters."
           - {label: "Hero Title", name: hero_title, widget: string}
           - {label: "Hero Image", name: hero_image, widget: image}
-          - label: "Overview Video"
+          - label: "Overview Video URL"
             name: about_video
-            widget: youtube-embed
-            hint: "Go to YouTube → Share → Embed, then paste the entire embed code here (or just the URL). Example URL format: https://www.youtube.com/embed/VIDEO_ID"
+            widget: string
+            hint: "On YouTube: click Share → Embed. From the code that appears, copy only the URL inside src=\"...\" — it starts with https://www.youtube.com/embed/ — and paste just that URL here."
 
           - {label: "History Section Title", name: history_title, widget: string}
           - {label: "History Photo", name: history_image, widget: image, hint: "Photo of Jack Schultz and Linda Althof"}

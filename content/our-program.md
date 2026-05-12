@@ -283,4 +283,7 @@ galleries:
       - image: /assets/images/2025-halloween/24.jpg
         credit: Photo by Ashlynn Allgeier
         alt_text: Halloween Party 2025
+      - image: /assets/images/uploads/496649233_9694340647319826_2955110495318206987_n.jpg
+        credit: photo by L2
+        alt_text: Hailee
 ---

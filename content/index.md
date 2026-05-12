@@ -70,7 +70,7 @@ feature:
     Dan is a retired NCAA Division III soccer coach with over 600 career wins and the founder of TOPS (The Outreach Program in Soccer), an Erie program that has connected college students with individuals with disabilities for over 20 years.
   cta: |
     **This June, Emma and Dan are walking across the entire state of Ohio—188 miles from the Pennsylvania border to Michigan—in support of Gliding Stars of Erie!** Calling all friends, Behrend Soccer alums, and Ohio peeps: Emma is pumped for this year’s adventure, and specific dates will be announced soon. Their journey has already raised thousands of dollars for nonprofits across the country. Help them bring that spirit home—donate to Gliding Stars of Erie today.
-  button: Donate to Gliding Stars
+  button: Donate to Gliding Stars of Erie
   button_url: /donate/
   image: /assets/images/emma-and-dan.jpeg
 

@@ -360,6 +360,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}"
     summary: "{{title}} — {{date}}"
     fields:
+      - {label: "Post Type", name: post_type, widget: hidden, default: "post"}
       - {label: "Title", name: title, widget: string}
       - label: "Date"
         name: date

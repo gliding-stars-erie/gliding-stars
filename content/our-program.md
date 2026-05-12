@@ -6,8 +6,8 @@ description: Find the Gliding Stars of Erie practice schedule, upcoming events
   from our Stars in Erie, PA.
 hero_title: Our Program
 hero_image: /assets/images/program-hero.jpg
-update_enabled: false
-update_title: Important Updat
+update_enabled: true
+update_title: Important Update
 update_text: >
   The 2026–2027 season schedule will be released shortly. Check back here for
   updates!

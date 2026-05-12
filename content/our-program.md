@@ -10,7 +10,7 @@ update_enabled: true
 update_title: Important Update
 update_text: >
   The 2026–2027 season schedule will be released shortly. Check back here for
-  updates!
+  updates! 
 events_title: Upcoming Events
 skating_events:
   - title: Skate with the Otters

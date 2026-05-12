@@ -1,135 +1,82 @@
 ---
-# =========================
-# PAGE SETTINGS
-# =========================
-# Required — do not change these two lines.
-
 title: Our Program
 layout: our-program.njk
-description: "Find the Gliding Stars of Erie practice schedule, upcoming events including the annual ice show, current season fundraisers, and photo galleries from our Stars in Erie, PA."
-
-
-# =========================
-# HERO
-# =========================
-# The large banner image at the top of the page.
-
+description: Find the Gliding Stars of Erie practice schedule, upcoming events
+  including the annual ice show, current season fundraisers, and photo galleries
+  from our Stars in Erie, PA.
 hero_title: Our Program
 hero_image: /assets/images/program-hero.jpg
-
-
-# =========================
-# IMPORTANT UPDATE
-# =========================
-# Set update_enabled to true to show a blue announcement box at the top of the page.
-# Set it to false to hide it when there is no active announcement.
-
-update_enabled: true
-
+update_enabled: false
 update_title: Important Update
-update_text: |
-  The 2026–2027 season schedule will be released shortly. Check back here for updates!
-
-
-# =========================
-# UPCOMING EVENTS
-# =========================
-# The event cards shown below the announcement box.
-# Each event needs: title, date, time, location_name, and location_url.
-# Set highlight: true on a card to display it in the inverted (blue) style —
-# typically used for the Ice Show.
-
+update_text: >
+  The 2026–2027 season schedule will be released shortly. Check back here for
+  updates!
 events_title: Upcoming Events
-
 skating_events:
   - title: Skate with the Otters
     date: TBD
     time: 6:30 p.m.
     location_name: Erie Insurance Arena
     location_url: https://erieinsurancearena.com
-
   - title: Annual Ice Show
     date: TBD
     time: 7:00 p.m.
     location_name: Mercyhurst Ice Center
     location_url: https://www.mercyhurst.edu
     highlight: true
-
   - title: Banquet
     date: TBD
     time: 5:30 p.m.
     location_name: Ambassador Conference Center
     location_url: https://ambassadorerie.com
-
-
-# =========================
-# FUNDRAISERS
-# =========================
-# Each fundraiser has three fields:
-#   title   — the name of the fundraiser
-#   date    — the date or date range (e.g. "October 5, 2025" or "October 13 – November 24, 2025")
-#   details — location, delivery date, or any other notes (optional)
-
 fundraisers_title: Fundraisers
-
 fundraisers:
   - title: Bingo Fundraiser
     date: Date TBD
-# Example: October 5, 2025
     details: Location TBD
-# Example: Location – Brookside Fire Hall
-
   - title: Stanganelli’s Fundraiser
     date: Date TBD
-# Example: Orders begin October 13, 2025; delivery November 24, 2025
     details: Food sale
-# Example: (specific types of food being sold)
-
   - title: Daffin’s Candies Fundraiser
     date: Date TBD
-# Example: Orders begin October 13, 2025; delivery November 24, 2025
     details: Candy bar sale
-# Example (specific flavors)
-
-
-# =========================
-# PRACTICE SCHEDULE
-# =========================
-# schedule_title: The heading shown above the schedule grid.
-# monday_label: The label for the recurring weekly session day.
-# monday_time: The time shown next to the monday_label.
-#
-# year_start / year_end: Used automatically to label each date with the correct year.
-#   September–December dates get year_start; January–March get year_end.
-#
-# schedule: A list of months with their session dates.
-#   Format: MonthName: [day, day, day]
-#
-# extra_sessions_title: Heading for the show-prep sessions block below the grid.
-# extra_sessions: Additional sessions listed below the main schedule grid.
-#   Each entry has a date and a time.
-#
-# schedule_download: File path to the PDF download of the full schedule.
-
 schedule_title: 2025–2026 Practice Schedule
-
 monday_label: Regular Monday Sessions
 monday_time: 6:00–7:30 p.m.
-
 year_start: 2025
 year_end: 2026
-
 schedule:
-  September: [22, 29]
-  October: [6, 13, 20, 27]
-  November: [3, 10, 17, 24]
-  December: [1, 8, 15]
-  January: [5, 12, 19, 26]
-  February: [2, 9, 16, 23]
-  March: [2, 9]
-
+  September:
+    - 22
+    - 29
+  October:
+    - 6
+    - 13
+    - 20
+    - 27
+  November:
+    - 3
+    - 10
+    - 17
+    - 24
+  December:
+    - 1
+    - 8
+    - 15
+  January:
+    - 5
+    - 12
+    - 19
+    - 26
+  February:
+    - 2
+    - 9
+    - 16
+    - 23
+  March:
+    - 2
+    - 9
 extra_sessions_title: Additional Sessions (Show Preparation)
-
 extra_sessions:
   - date: Monday, March 16, 2026
     time: 5:30–8:30 p.m.
@@ -141,37 +88,8 @@ extra_sessions:
     time: 5:30 p.m. Stars call time
   - date: Monday, March 23, 2026 (free skate)
     time: 6:00–7:00 p.m.
-
 schedule_download: /assets/schedule/2025-2026-GSE-Schedule.pdf
-
-
-# =========================
-# PHOTO GALLERIES
-# =========================
-# Add as many galleries as you want. Each gallery has a title, a type, and a list of photos.
-#
-# type controls how photos are displayed on mobile. Choose one:
-#   vertical   — mostly portrait/vertical photos
-#   mixed      — a mix of portrait and landscape photos
-#   horizontal — mostly landscape/horizontal photos
-#
-# Each photo needs three fields:
-#   image    — the file path to the photo
-#   credit   — who took the photo (e.g. "Photo by Linda Althof")
-#   alt_text — a plain-English description of the photo for screen readers and search engines.
-#              Be specific — describe who is in the photo and what they are doing.
-#
-# Good alt_text examples:
-#   "A young girl in a blue helmet gliding on the ice, supported by a volunteer
-#    on each side, smiling at the camera"
-#   "Five Gliding Stars skaters and their coaches posing together in the center
-#    of the ice at Mercyhurst Ice Center after the annual show"
-#
-# Too vague (avoid these):
-#   "Skater on ice"   "Group photo"   "Event photo"
-
 gallery_title: Photo Gallery
-
 galleries:
   - title: Banquet 2026
     type: horizontal
@@ -290,7 +208,6 @@ galleries:
       - image: /assets/images/2026-banquet/38 Large.jpeg
         credit: Photo by Michael Simons
         alt_text: Banquet 2026
-
   - title: Halloween Party 2025
     type: mixed
     photos:

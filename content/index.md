@@ -17,7 +17,7 @@ description: "Gliding Stars of Erie is an adaptive ice skating program in Erie, 
 
 hero_video: /assets/video/hero.mp4
 hero_logo: /assets/images/logo.png
-hero_motto: I CAN DO IT! I CAN SKATE!
+hero_motto: "I CAN DO IT!&nbsp;&nbsp;I CAN SKATE!"
 hero_sub: Building confidence, independence, and community on the ice
 
 
@@ -78,11 +78,11 @@ feature:
 # ICE SHOW SECTION
 # =========================
 # The section that appears below the feature banner.
-# Edit the title and text here. To change the video, ask a developer to
-# update the YouTube URL inside content/_layouts/home.njk.
+# Edit the title, text, and video URL here.
 
 show:
   title: The Ice Show
+  video: https://www.youtube.com/embed/0qNn9nf9P-4
   text: |
     Each season builds toward a final performance where every skater has the opportunity to shine. It’s a moment of confidence, pride, and celebration for skaters and families alike.
 

@@ -6,6 +6,7 @@ description: Learn about Gliding Stars of Erie—our 26-year history founded by
   coaches and volunteers who make it possible.
 hero_title: About Us
 hero_image: /assets/images/about-hero.jpg
+about_video: https://www.youtube.com/embed/yGbSxOeb9O8?si=n9UxUz9ABWg3W4C2
 history_title: Our History
 history_image: /assets/images/jack-linda.jpg
 history: >

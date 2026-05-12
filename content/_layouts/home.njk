@@ -10,7 +10,7 @@
 
   <div class="hero-overlay">
     <img src="{{ hero_logo | url }}" alt="Gliding Stars logo" class="hero-logo">
-    <h1>{{ hero_motto }}</h1>
+    <h1>{{ hero_motto | safe }}</h1>
     <p class="hero-sub">{{ hero_sub }}</p>
   </div>
 </section>
@@ -62,7 +62,7 @@
   <p>{{ show.text }}</p>
   <div class="video-embed">
     <iframe
-      src="https://www.youtube.com/embed/0qNn9nf9P-4"
+      src="{{ show.video }}"
       title="Gliding Stars Ice Show"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       allowfullscreen>

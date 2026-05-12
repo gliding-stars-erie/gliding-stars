@@ -286,6 +286,8 @@ p a:active,
     color: white;
     text-align: center;
     padding: 1rem;
+    gap: 0.25rem;
+    overflow: hidden;
 }
 
 .hero-logo {
@@ -305,14 +307,24 @@ p a:active,
     max-width: 600px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
+    /* Push overlay content below the fixed nav so the logo never hides behind it.
+       The video still fills the full hero; only the text/logo zone shifts down. */
+    .hero-overlay {
+        padding-top: 90px;
+    }
+
     .hero-overlay h1 {
-        font-size: 2.5rem;
+        font-size: clamp(1.4rem, 2.2vw, 2.5rem);
     }
 
     .hero-logo {
+        /* width: auto + max-height lets the square logo scale down
+           proportionally on short viewports (Windows/zoom) while
+           staying at the full 420px on macOS where 55vh >> 420px */
+        width: auto;
         max-width: 420px;
-        width: 40%;
+        max-height: 45vh;
     }
 }
 
@@ -444,7 +456,7 @@ p a:active,
     margin-bottom: 1rem;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
     .history-image-wrap figcaption {
         font-size: 0.7rem;
         white-space: nowrap;
@@ -452,7 +464,7 @@ p a:active,
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .history-image-wrap {
         float: right;
         width: 40%;
@@ -616,7 +628,7 @@ p a:active,
     border-radius: 10px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .donate-layout {
         flex-direction: row;
         align-items: center;
@@ -707,7 +719,7 @@ p a:active,
     padding-bottom: 2rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .get-involved-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -837,20 +849,26 @@ p a:active,
 
 
 /* =========================
-   DESKTOP  (min-width: 768px)
+   DESKTOP  (min-width: 1024px)
 ========================= */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
 
     /* Nav: switch from vertical dropdown to horizontal inline links */
     .nav-links {
         position: static;
         max-height: none;
         flex-direction: row;
+        flex-wrap: nowrap;
         gap: 2rem;
         background: none;
         padding: 0;
         width: auto;
         margin-left: auto;
+    }
+
+    .nav-links a {
+        font-size: clamp(0.875rem, 1.1vw, 1.2rem);
+        white-space: nowrap;
     }
 
     .nav-toggle {
@@ -881,9 +899,9 @@ p a:active,
 
 
 /* =========================
-   MOBILE  (max-width: 767px)
+   MOBILE  (max-width: 1023px)
 ========================= */
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
 
     /* Account for the solid navbar height on all pages */
     main,
@@ -1233,7 +1251,7 @@ p a:active,
     margin-bottom: 1.5rem;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
     .featured-time .highlight {
         display: inline-block;
         margin-top: 0.4rem;
@@ -1248,7 +1266,7 @@ p a:active,
     border-radius: 4px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .schedule-grid {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -1328,7 +1346,7 @@ p a:active,
     top: 1px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .event-grid {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -1396,7 +1414,7 @@ p a:active,
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .feature-image {
         float: right;
         width: 42%;
@@ -1415,7 +1433,7 @@ p a:active,
     margin-top: 0.5rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .team-grid {
         grid-template-columns: repeat(6, 1fr);
     }
@@ -1530,7 +1548,7 @@ p a:active,
 }
 
 /* Desktop: film strip — consistent height, natural width per image */
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
     .gallery-item {
         min-width: 0;
         flex-shrink: 0;

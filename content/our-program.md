@@ -6,7 +6,7 @@ description: Find the Gliding Stars of Erie practice schedule, upcoming events
   from our Stars in Erie, PA.
 hero_title: Our Program
 hero_image: /assets/images/program-hero.jpg
-update_enabled: true
+update_enabled: false
 update_title: Important Update
 update_text: >
   The 2026–2027 season schedule will be released shortly. Check back here for
@@ -19,13 +19,13 @@ skating_events:
     location_name: Erie Insurance Arena
     location_url: https://erieinsurancearena.com
   - title: Annual Ice Show
-    date: TBD
+    date: March 20, 2027
     time: 7:00 p.m.
     location_name: Mercyhurst Ice Center
     location_url: https://www.mercyhurst.edu
     highlight: true
   - title: Banquet
-    date: TBD
+    date: March 25, 2027
     time: 5:30 p.m.
     location_name: Ambassador Conference Center
     location_url: https://ambassadorerie.com
@@ -40,55 +40,53 @@ fundraisers:
   - title: Daffin’s Candies Fundraiser
     date: Date TBD
     details: Candy bar sale
-schedule_title: 2025–2026 Practice Schedule
+schedule_title: 2026–2027 Practice Schedule
 monday_label: Regular Monday Sessions
-monday_time: 6:00–7:30 p.m.
-year_start: 2025
-year_end: 2026
+monday_time: 6:00–7:15 p.m.
+year_start: 2026
+year_end: 2027
 schedule:
   September:
-    - 22
-    - 29
+    - 21
+    - 28
   October:
-    - 6
-    - 13
-    - 20
-    - 27
-  November:
-    - 3
-    - 10
-    - 17
-    - 24
-  December:
-    - 1
-    - 8
-    - 15
-  January:
     - 5
     - 12
     - 19
     - 26
-  February:
+  November:
     - 2
     - 9
     - 16
     - 23
+  December:
+    - 7
+    - 14
+    - 21
+  January:
+    - 18
+    - 25
+  February:
+    - 1
+    - 8
+    - 15
+    - 22
   March:
-    - 2
-    - 9
+    - 1
+    - 8
 extra_sessions_title: Additional Sessions (Show Preparation)
 extra_sessions:
-  - date: Monday, March 16, 2026
+  - date: Monday, March 15, 2026
     time: 5:30–8:30 p.m.
-  - date: Wednesday, March 18, 2026
+  - date: Thursday, March 18, 2026
     time: 5:30–9:00 p.m.
-  - date: Friday, March 20, 2026
-    time: 5:30–9:00 p.m.
-  - date: Saturday, March 21, 2026 (SHOW DAY)
-    time: 5:30 p.m. Stars call time
-  - date: Monday, March 23, 2026 (free skate)
-    time: 6:00–7:00 p.m.
-schedule_download: /assets/schedule/2025-2026-GSE-Schedule.pdf
+  - date: Friday, March 19, 2026
+    time: 5:30–10:00 p.m.
+  - date: Saturday, March 20, 2026 (SHOW DAY)
+    time: 8:00 a.m.–11:00 p.m.
+  - date: Monday, March 22, 2026 (free skate)
+    time: 6:00–7:15 p.m.
+schedule_download: /assets/images/uploads/2026-2027-gse-schedule.pdf
 gallery_title: Photo Gallery
 galleries:
   - title: Banquet 2026

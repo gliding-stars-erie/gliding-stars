@@ -26,7 +26,7 @@ volunteer_text: >
 
 
   Return the completed registration form to our PO box or email it to us. You may also bring it with you on the first week of the season, but we would still love for you to reach out beforehand so we know you're coming!
-volunteer_form: /assets/images/uploads/2026-2027-volunteer-registration.pdf
+volunteer_form: /assets/forms/2026-2027-volunteer-registration.pdf
 skater_title: Skater Program
 skater_text: >
   We are always looking for individuals to join the Gliding Stars of Erie family
@@ -41,5 +41,5 @@ skater_text: >
 
 
   Due to preparation for the annual ice show, registration for new skaters closes on January 1. However, new volunteers are always welcome throughout the season.
-skater_form: /assets/images/uploads/2026-2027-skater-registration.pdf
+skater_form: /assets/forms/2026-2027-skater-registration.pdf
 ---

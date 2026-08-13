@@ -86,7 +86,7 @@ extra_sessions:
     time: 8:00 a.m.–11:00 p.m.
   - date: Monday, March 22, 2026 (free skate)
     time: 6:00–7:15 p.m.
-schedule_download: /assets/images/uploads/2026-2027-gse-schedule.pdf
+schedule_download: /assets/schedule/2026-2027-gse-schedule.pdf
 gallery_title: Photo Gallery
 galleries:
   - title: Banquet 2026

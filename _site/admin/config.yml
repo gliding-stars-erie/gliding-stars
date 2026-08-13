@@ -266,6 +266,8 @@ collections:
             name: schedule_download
             widget: file
             required: false
+            media_folder: /assets/schedule
+            public_folder: /assets/schedule
             hint: "Upload the full season schedule PDF."
 
           - {label: "Gallery Section Title", name: gallery_title, widget: string}
@@ -314,11 +316,19 @@ collections:
           - {label: "Volunteer Section Title", name: volunteer_title, widget: string}
           - {label: "Volunteer Subheading", name: volunteer_subtitle, widget: string}
           - {label: "Volunteer Text", name: volunteer_text, widget: markdown}
-          - {label: "Volunteer Registration Form (PDF)", name: volunteer_form, widget: file}
+          - label: "Volunteer Registration Form (PDF)"
+            name: volunteer_form
+            widget: file
+            media_folder: /assets/forms
+            public_folder: /assets/forms
 
           - {label: "Skater Section Title", name: skater_title, widget: string}
           - {label: "Skater Text", name: skater_text, widget: markdown}
-          - {label: "Skater Registration Form (PDF)", name: skater_form, widget: file}
+          - label: "Skater Registration Form (PDF)"
+            name: skater_form
+            widget: file
+            media_folder: /assets/forms
+            public_folder: /assets/forms
 
 
       # ----------------------------------------------------------
@@ -345,6 +355,7 @@ collections:
           - {label: "Donation Box Text", name: donate_text, widget: markdown}
           - {label: "Venmo Link URL", name: venmo_link, widget: string}
           - {label: "Venmo Button Label", name: venmo_text, widget: string}
+          - {label: "Venmo QR Code", name: venmo_qr_image, widget: image}
 
 
   # =============================================================

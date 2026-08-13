@@ -123,8 +123,16 @@
   
     
   <url>
+    <loc>https://glidingstarsoferie.org/about-us/</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+    
+  
+    
+  <url>
     <loc>https://glidingstarsoferie.org/donate/</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-08-13</lastmod>
     <changefreq>monthly</changefreq>
   </url>
     
@@ -132,23 +140,7 @@
     
   <url>
     <loc>https://glidingstarsoferie.org/get-involved/</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>monthly</changefreq>
-  </url>
-    
-  
-    
-  <url>
-    <loc>https://glidingstarsoferie.org/our-program/</loc>
-    <lastmod>2026-05-12</lastmod>
-    <changefreq>monthly</changefreq>
-  </url>
-    
-  
-    
-  <url>
-    <loc>https://glidingstarsoferie.org/about-us/</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2026-08-13</lastmod>
     <changefreq>monthly</changefreq>
   </url>
     
@@ -156,8 +148,16 @@
     
   <url>
     <loc>https://glidingstarsoferie.org/</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2026-08-13</lastmod>
     <changefreq>weekly</changefreq>
+  </url>
+    
+  
+    
+  <url>
+    <loc>https://glidingstarsoferie.org/our-program/</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
   </url>
     
   

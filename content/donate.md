@@ -55,4 +55,5 @@ donate_text: |
 
 venmo_link: https://account.venmo.com/u/glidingstarsoferie
 venmo_text: Donate to Gliding Stars of Erie, Inc. on Venmo
+venmo_qr_image: /assets/images/gliding-stars-of-erie-venmo-qr.png
 ---

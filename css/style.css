@@ -696,6 +696,36 @@ p a:active,
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* =========================
+   VENMO QR CODE
+========================= */
+
+/* Hidden on mobile/tablet — the QR code is intended for desktop visitors */
+.venmo-qr {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .venmo-qr {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1.5rem;
+    }
+
+    .venmo-qr p {
+        margin-bottom: 0.75rem;
+        font-size: 0.9rem;
+        color: #555;
+    }
+
+    .venmo-qr img {
+        width: 180px;
+        height: 180px;
+        display: block;
+        border-radius: 8px;
+    }
+}
 
 /* =========================
    GET INVOLVED PAGE
